@@ -7,10 +7,17 @@
     <title>Login</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
-<body>
-    Hey world
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-</body>
+<style type="text/css">
+.padre {
+  display: flex;
+  justify-content: center;
+}
+.hijo {
+  padding: 10px;
+  margin: 10px;
+  background-color: yellow;
+}
+</style>
 <script>
 function onSignIn(googleUser) {
   const profile = googleUser.getBasicProfile();
@@ -22,4 +29,9 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }    
 </script>
+<body>
+    <div class="padre">
+        <div class="g-signin2 hijo" data-onsuccess="onSignIn"></div>
+    </div>
+</body>
 </html>
